@@ -5,7 +5,7 @@ const useValidation = (value = "", validations, variableName) => {
   const [isInputValid, setIsInputValid] = useState(false);
   const [isInputTouched, setIsInputTouched] = useState(false);
   const minLength = validations.minLength;
-  const regExpUrl = /(^https?:\/\/)?[a-z0-9~_\-.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
+  const regExpUrl = /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi;
   const regExpEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
   React.useEffect(() => {
